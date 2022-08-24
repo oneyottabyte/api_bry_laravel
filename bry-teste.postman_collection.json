@@ -1,0 +1,459 @@
+{
+	"info": {
+		"_postman_id": "b9b54fe2-200e-4221-84e3-10209040495a",
+		"name": "bry-teste",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18096360"
+	},
+	"item": [
+		{
+			"name": "Empresas",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/empresa",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"empresa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store, update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nome",
+									"value": "NIKE INDUSTRIAS LTDA",
+									"type": "text"
+								},
+								{
+									"key": "cnpj",
+									"value": "45.886.418/0001-58",
+									"type": "text"
+								},
+								{
+									"key": "endereco",
+									"value": "RUA MARISA, 588, SANTOS",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "patch",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/empresa",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"empresa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Associar Funcionario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "empresa_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "funcionario_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/empresa/funcionario",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"empresa",
+								"funcionario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "index com atributos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/marca?atributo=id,nome&atributos_funcionarios=id,marca_id,nome,imagem&filtro=nome:=:Ford",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"marca"
+							],
+							"query": [
+								{
+									"key": "atributo",
+									"value": "id,nome"
+								},
+								{
+									"key": "atributos_funcionarios",
+									"value": "id,marca_id,nome,imagem"
+								},
+								{
+									"key": "filtro",
+									"value": "nome:=:Ford"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/marca/16",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"marca",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjYwNTA0ODgwLCJleHAiOjE2NjA1MTIwODAsIm5iZiI6MTY2MDUwNDg4MCwianRpIjoiNG03bmNQUHl5YWVwS2JvaiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.GAkVRdA8N7bLYOT8HkLlmE0z4pB-Jv-uscb7GRBl3hA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nome",
+									"value": "Kia",
+									"type": "text"
+								},
+								{
+									"key": "imagem",
+									"value": "foto3.jpg",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/marca/18",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"marca",
+								"18"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Funcionario",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/funcionario",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"funcionario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store, Update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "login",
+									"value": "pedro_cabral",
+									"type": "text"
+								},
+								{
+									"key": "nome",
+									"value": "Pedro Alvarez Cabral",
+									"type": "text"
+								},
+								{
+									"key": "cpf",
+									"value": "555.444.777-98",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "contato@email.com",
+									"type": "text"
+								},
+								{
+									"key": "endereco",
+									"value": "Rua Salvador, 1500",
+									"type": "text"
+								},
+								{
+									"key": "senha",
+									"value": "02031500",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/funcionario",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"funcionario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Associar Empresa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "empresa_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "funcionario_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/empresa/funcionario",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"empresa",
+								"funcionario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "index com atributos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/funcionario?atributos=id,nome&atributos_empresas=nome&filtro=nome:like:%a%",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"funcionario"
+							],
+							"query": [
+								{
+									"key": "atributos",
+									"value": "id,nome"
+								},
+								{
+									"key": "atributos_empresas",
+									"value": "nome"
+								},
+								{
+									"key": "filtro",
+									"value": "nome:like:%a%"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/funcionario/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"funcionario",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nome",
+									"value": "Kia",
+									"type": "text"
+								},
+								{
+									"key": "imagem",
+									"value": "foto3.jpg",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/funcionario/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"funcionario",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
